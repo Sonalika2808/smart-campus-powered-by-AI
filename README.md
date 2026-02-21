@@ -2,140 +2,97 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# Smart Campus powered by AI🎯
 
-## Basic Details
+## Student friendly app
 
-### Team Name: [Name]
+### Team Name: hacktech
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: M.Sonalika - College of Engineering Munnar
+- Member 2: Akshaya.S - College of Engineering Munnar
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://github.com/Sonalika2808/smart-campus-powered-by-AI/edit/main/README.md
 
 ### Project Description
-[2-3 lines about what your project does]
+The Smart Campus Issue Reporter is an AI-based web application designed to simplify and modernize the process of reporting and managing campus-related issues. In many institutions, problems such as damaged infrastructure, electrical faults, water leakage, and cleanliness concerns are often reported manually, leading to delays and lack of transparency. This system provides a digital platform where students can submit complaints through text or images, which are then automatically analyzed and categorized using artificial intelligence. The admin dashboard enables authorities to monitor, assign, and update the status of each issue in real time. By improving efficiency, ensuring accountability, and enabling faster resolution, the Smart Campus Issue Reporter contributes to a more organized, responsive, and technology-driven campus environment.
 
 ### The Problem statement
-[What problem are you solving?]
+Campuses often rely on manual complaint systems that are slow, unorganized, and lack transparency. Students cannot easily track issues, and delays in resolution affect campus efficiency. There is a need for a smart, centralized system to streamline and monitor issue reporting effectively.
 
 ### The Solution
-[How are you solving it?]
-
----
-
-## Technical Details
+The Smart Campus powered by AI is a web-based AI-powered system that allows students to digitally report campus issues through text or images. The system automatically categorizes complaints, assigns priority, and enables real-time tracking through an admin dashboard. This ensures faster resolution, transparency, and efficient campus management.
 
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
-
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
-
----
+- Languages used: JavaScript, Python, CSS3,HTML5,SQL
+- Frameworks used:Django,Frontend ,Bootstrap
+- Libraries used: Pandas ,NumPy ,Scikit-learn ,NLTK ,OpenCV 
+- Tools used:VS Code, Git, Docker
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
-
----
+Feature 1: Smart Complaint Submission
+Feature 2: AI-Based Automatic Categorization
+Feature 3: Real-Time Status Tracking
+Feature 4: Admin Dashboard & Analytics
 
 ## Implementation
 
 ### For Software:
 
 #### Installation
-```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
-```
+# 1. Create virtual environment (recommended)
+python -m venv venv
+
+# 2. Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# 3. Install required libraries
+pip install flask pandas numpy scikit-learn
+
+# 4. (If using MySQL)
+pip install mysql-connector-python
+
+# 5. Run the project
+python app.py
 
 #### Run
-```bash
-[Run commands - e.g., npm start, python app.py]
-```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
-
----
-
-## Project Documentation
+python manage.py runserver
+flask run
+python app.py
 
 ### For Software:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="1147" height="865" alt="Screenshot 2026-02-21 102306" src="https://github.com/user-attachments/assets/825977c6-cf78-488d-a2b5-fb2b1d1fc160" />
+<img width="1708" height="859" alt="Screenshot 2026-02-21 102423" src="https://github.com/user-attachments/assets/e246243c-0502-4cec-8548-633ce444f8f1" />
+<img width="1779" height="832" alt="Screenshot 2026-02-21 102524" src="https://github.com/user-attachments/assets/43fb48b8-6e27-491a-baf1-8bcd69051ee5" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-#### Diagrams
 
 **System Architecture:**
+Frontend Layer – Built using HTML, CSS, and JavaScript for complaint submission and tracking.
+Backend Layer – Developed with Python (Flask/Django) to handle logic and AI-based issue categorization.
+Database Layer – Uses SQLite/MySQL to store user data and complaint records.
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
+User Login/Register – Student logs into the system.
+Issue Submission – Student submits complaint with description and optional image.
+AI Processing – System analyzes and categorizes the issue automatically.
+Database Storage – Complaint details are saved in the database.
+Admin Review – Admin views and assigns the issue for resolution.
+Status Update – Issue status is updated (Pending/In Progress/Resolved).
+User Notification – Student tracks and receives updates on the complaint.
 
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
-
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
----
-
-## Additional Documentation
-
-### For Web Projects with Backend:
-
-#### API Documentation
 
 **Base URL:** `https://api.yourproject.com`
 
@@ -399,12 +356,8 @@ If you used AI tools during development, document them here for transparency:
 ---
 
 ## Team Contributions
-
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
-
----
+M.Sonalika-Frontend 
+Akshaya.S-UI/UX designs
 
 ## License
 
