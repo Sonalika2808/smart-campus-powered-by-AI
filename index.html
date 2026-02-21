@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Campus Issue Reporter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg-dark:#0f172a;
+    --card-dark:#1e293b;
+    --neon:#00f5ff;
+    --accent:#ff00c8;
+    --success:#00ff88;
+    --warning:#ffcc00;
+    --danger:#ff4b2b;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* FLOATING BACKGROUND ANIMATION */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle, rgba(0,255,255,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:moveBg 20s linear infinite;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    from{transform:translate(0,0);}
+    to{transform:translate(-200px,-200px);}
+}
+
+/* CARDS */
+.main-card{
+    background: rgba(30,41,59,0.9);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 0 25px rgba(0,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border:1px solid rgba(0,255,255,0.2);
+    transition:0.4s ease;
+    animation:fadeUp 1s ease forwards;
+}
+
+.main-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 30px var(--neon);
+}
+
+/* TEXT ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* BUTTON */
+.btn-custom{
+    border-radius:30px;
+    background:linear-gradient(45deg,var(--neon),var(--accent));
+    border:none;
+    color:black;
+    font-weight:600;
+    transition:0.3s;
+    animation:pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow{
+    from{box-shadow:0 0 5px var(--neon);}
+    to{box-shadow:0 0 20px var(--accent);}
+}
+
+.btn-custom:hover{
+    transform:scale(1.08);
+}
+
+/* FLOATING IMAGES */
+.float-img{
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0px);}
+}
+
+/* TABLE */
+.table{
+    background:var(--card-dark);
+    color:white;
+    border-radius:15px;
+}
+
+.table thead{
+    background:black;
+    color:var(--neon);
+}
+
+.progress{
+    height:10px;
+    background:#334155;
+}
+
+.progress-bar{
+    background:linear-gradient(90deg,var(--neon),var(--accent));
+}
+
+.stat-card{
+    background:var(--card-dark);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,255,255,0.1);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px var(--accent);
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--neon);
+}
+
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+<div class="container py-5">
+
+
+
+<!-- HOME -->
+<div id="homeSection">
+
+    <div class="text-center mb-4" style="animation:fadeUp 1.2s ease;">
+        <h2 class="fw-bold" style="color:var(--neon);">
+            🚀 Smart Campus Issue Reporter
+        </h2>
+        <p class="text-info">AI Powered Student-Admin Communication System</p>
+        <p><i>Here you can report and track your issues!</i></p>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <img src="cem.jpg" class="img-fluid rounded shadow float-img" style="height:220px; object-fit:cover;">
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="logo1.jpg" class="img-fluid rounded shadow float-img" style="height:220px; object-fit:cover;">
+        </div>
+        <div class="col-md-4 mb-3">
+            <img src="cem1.jpg" class="img-fluid rounded shadow float-img" style="height:220px; object-fit:cover;">
+        </div>
+    </div>
+    <!-- MOTTO -->
+    <div class="main-card mb-4 text-center">
+        <h4 style="color:var(--accent);"><b>MISSION</b></h4>
+        <p class="mt-2">
+            "To impart quality education through instructional programmes in technological education.
+To engage applied research in Socio-economic environment.
+To nurture intellectual skills to its zenith potential."
+        </p>
+    </div>
+
+    <!-- GUIDELINES -->
+    <div class="main-card mb-4">
+        <h4 style="color:var(--neon);">📜 Reporting Guidelines</h4>
+        <ul class="mt-3">
+            <li>Provide clear and detailed description of the issue.</li>
+            <li>Upload image proof wherever applicable.</li>
+            <li>Avoid duplicate complaints.</li>
+            <li>Respect campus policies while reporting.</li>
+            <li>Track your issue status regularly.</li>
+        </ul>
+    </div>
+    <!-- CONTACT INFO -->
+    <div class="main-card mb-4">
+        <h4 style="color:var(--accent);">📞 Contact Information</h4>
+        <p><strong>College:</strong> College of Engineering Munnar</p>
+        <p><strong>Email:</strong> mail@cemunnar.ac.in</p>
+        <p><strong>Phone:</strong> 04865 232989</p>
+        <p><strong>Website:</strong> cemunnar.ac.in</p>
+        <p><strong>Address:</strong> Munnar, Idukki - 685612, Kerala, India</p>
+    </div>
+
+    <!-- MODULE BUTTONS -->
+    <div class="text-center mt-4">
+        <button class="btn btn-custom me-3" onclick="enterStudent()">
+            🎓 Student login
+        </button>
+        <button class="btn btn-custom" onclick="enterAdmin()">
+            🛠 Admin login
+        </button>
+    </div>
+</div>
+<!-- STUDENT LOGIN -->
+<div id="studentLogin" class="main-card hidden">
+    <h4>Student Login</h4>
+    <button class="btn btn-secondary mb-3" onclick="goHome()">⬅ Back</button>
+    <input type="text" id="studentName" class="form-control mt-2" placeholder="Enter Name">
+    <input type="password" id="studentPassword" class="form-control mt-3" placeholder="Enter Password">
+    <button class="btn btn-success btn-custom mt-3" onclick="studentLogin()">Login</button>
+    <button class="btn btn-link mt-2" onclick="showStudentForgot()">Forgot Password?</button>
+    <div id="studentError" class="text-danger mt-2"></div>
+
+    <div id="studentForgotSection" class="hidden mt-3">
+        <p><strong>Security Question:</strong> What is our students favorite spot?</p>
+        <input type="text" id="studentAnswer" class="form-control mb-2" placeholder="Enter Answer">
+        <button class="btn btn-primary mb-2" onclick="verifyStudentAnswer()">Verify</button>
+
+        <div id="studentResetSection" class="hidden">
+            <input type="password" id="newStudentPass" class="form-control mb-2" placeholder="Enter New Password">
+            <input type="password" id="confirmStudentPass" class="form-control mb-2" placeholder="Confirm New Password">
+            <button class="btn btn-success" onclick="resetStudentPassword()">Set New Password</button>
+        </div>
+
+        <div id="studentForgotMsg"></div>
+    </div>
+</div>
+
+<!-- STUDENT DASHBOARD -->
+<div id="studentDashboard" class="main-card hidden">
+    <h4>Report an Issue</h4>
+    <button class="btn btn-secondary mb-3" onclick="goHome()">⬅ Home</button>
+
+    <textarea id="description" class="form-control mt-3" placeholder="Describe the issue..."></textarea>
+    <input type="file" id="issueImage" class="form-control mt-3" accept="image/*" onchange="previewImage()">
+    <img id="imagePreview" width="120" class="hidden mt-2">
+
+    <button class="btn btn-custom mt-3" onclick="submitIssue()">Submit Issue</button>
+<hr>
+<h5>Check Ticket by ID</h5>
+
+<div class="row g-2">
+    <div class="col-md-6">
+        <input type="text" id="searchTicketId" 
+               class="form-control" 
+               placeholder="Enter Ticket ID">
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-info w-100" onclick="checkTicketStatus()">
+            Check Status
+        </button>
+    </div>
+</div>
+
+<div id="ticketSearchResult" class="mt-3"></div>
+    <hr>
+    <h5>Your Tickets</h5>
+
+<div class="table-responsive mt-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Image</th>
+                <th>Updates</th>
+            </tr>
+        </thead>
+        <tbody id="studentTickets"></tbody>
+    </table>
+</div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div id="adminLogin" class="main-card hidden">
+    <h4>Admin Login</h4>
+    <button class="btn btn-secondary mb-3" onclick="goHome()">⬅ Back</button>
+    <input type="password" id="adminPassword" class="form-control mt-3" placeholder="Enter Password">
+    <button class="btn btn-dark btn-custom mt-3" onclick="adminLogin()">Login</button>
+    <button class="btn btn-link mt-2" onclick="showAdminForgot()">Forgot Password?</button>
+    <div id="adminError" class="text-danger mt-2"></div>
+
+    <div id="adminForgotSection" class="hidden mt-3">
+        <p><strong>Security Question:</strong> College location?</p>
+        <input type="text" id="adminAnswer" class="form-control mb-2" placeholder="Enter Answer">
+        <button class="btn btn-primary mb-2" onclick="verifyAdminAnswer()">Verify</button>
+
+        <div id="adminResetSection" class="hidden">
+            <input type="password" id="newAdminPass" class="form-control mb-2" placeholder="Enter New Password">
+            <input type="password" id="confirmAdminPass" class="form-control mb-2" placeholder="Confirm New Password">
+            <button class="btn btn-success" onclick="resetAdminPassword()">Set New Password</button>
+        </div>
+
+        <div id="adminForgotMsg"></div>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminDashboard" class="main-card hidden">
+    <h4>Admin Dashboard</h4>
+    <button class="btn btn-secondary mb-3" onclick="goHome()">⬅ Home</button>
+
+    <!-- LIVE ANALYTICS -->
+    <h5 class="mb-3">📊 Live Analytics</h5>
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" id="issuesToday">0</div>
+                <div>Total Issues</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" id="resolvedPercent">0%</div>
+                <div>Resolved %</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" id="topReporter">-</div>
+                <div>Top Reporter 🏆</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody id="adminTable"></tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+<script>
+let STUDENT_PASSWORD = localStorage.getItem("studentPass") || "cemmunnar";
+let ADMIN_PASSWORD = localStorage.getItem("adminPass") || "p@cem";
+let currentStudent="";
+let imageBase64="";
+
+function saveMessage(index,value){
+    let issues=JSON.parse(localStorage.getItem("issues"));
+    issues[index].message=value;
+    localStorage.setItem("issues",JSON.stringify(issues));
+}
+function hideAll(){
+document.getElementById("homeSection").classList.add("hidden");
+document.getElementById("studentLogin").classList.add("hidden");
+document.getElementById("studentDashboard").classList.add("hidden");
+document.getElementById("adminLogin").classList.add("hidden");
+document.getElementById("adminDashboard").classList.add("hidden");
+}
+
+function enterStudent(){hideAll();document.getElementById("studentLogin").classList.remove("hidden");}
+function enterAdmin(){hideAll();document.getElementById("adminLogin").classList.remove("hidden");}
+function goHome(){hideAll();document.getElementById("homeSection").classList.remove("hidden");}
+
+function studentLogin(){
+    let name=document.getElementById("studentName").value;
+    let pass=document.getElementById("studentPassword").value;
+
+    if(pass===STUDENT_PASSWORD){
+        currentStudent=name;
+        hideAll();
+        document.getElementById("studentDashboard").classList.remove("hidden");
+        loadStudentTickets();
+    }else{
+        document.getElementById("studentError").innerText="Incorrect Password!";
+    }
+}
+
+function adminLogin(){
+    let pass=document.getElementById("adminPassword").value;
+    if(pass===ADMIN_PASSWORD){
+        hideAll();
+        document.getElementById("adminDashboard").classList.remove("hidden");
+        loadAdminTable();
+    }else{
+        document.getElementById("adminError").innerText="Incorrect Password!";
+    }
+}
+
+function showStudentForgot(){ document.getElementById("studentForgotSection").classList.remove("hidden"); }
+
+function verifyStudentAnswer(){
+    let ans=document.getElementById("studentAnswer").value.toLowerCase();
+    if(ans==="canteen"){
+        document.getElementById("studentResetSection").classList.remove("hidden");
+        document.getElementById("studentForgotMsg").innerHTML="<span class='text-success'>Verified!</span>";
+    }else{
+        document.getElementById("studentForgotMsg").innerHTML="<span class='text-danger'>Wrong Answer!</span>";
+    }
+}
+function resetStudentPassword(){
+    let newPass=document.getElementById("newStudentPass").value;
+    let confirm=document.getElementById("confirmStudentPass").value;
+
+    if(newPass===confirm && newPass!==""){
+        localStorage.setItem("studentPass",newPass);
+        STUDENT_PASSWORD=newPass;
+        alert("Password Updated!");
+        document.getElementById("studentForgotSection").classList.add("hidden");
+    }else{
+        alert("Passwords do not match!");
+    }
+}
+
+function showAdminForgot(){ document.getElementById("adminForgotSection").classList.remove("hidden"); }
+
+function verifyAdminAnswer(){
+    let ans=document.getElementById("adminAnswer").value.toLowerCase();
+    if(ans==="munnar"){
+        document.getElementById("adminResetSection").classList.remove("hidden");
+        document.getElementById("adminForgotMsg").innerHTML="<span class='text-success'>Verified!</span>";
+    }else{
+        document.getElementById("adminForgotMsg").innerHTML="<span class='text-danger'>Wrong Answer!</span>";
+    }
+}
+
+function resetAdminPassword(){
+    let newPass=document.getElementById("newAdminPass").value;
+    let confirm=document.getElementById("confirmAdminPass").value;
+
+    if(newPass===confirm && newPass!==""){
+        localStorage.setItem("adminPass",newPass);
+        ADMIN_PASSWORD=newPass;
+        alert("Admin Password Updated!");
+        document.getElementById("adminForgotSection").classList.add("hidden");
+    }else{
+        alert("Passwords do not match!");
+    }
+}
+function detectCategory(desc){
+desc=desc.toLowerCase();
+if(desc.includes("water")||desc.includes("leak"))return"Water / Plumbing";
+if(desc.includes("electric"))return"Electricity";
+if(desc.includes("food"))return"Food Complaint";
+if(desc.includes("injury"))return"Medical";
+return"General Complaint";
+}
+
+function previewImage(){
+let file=document.getElementById("issueImage").files[0];
+let reader=new FileReader();
+reader.onload=function(){
+imageBase64=reader.result;
+document.getElementById("imagePreview").src=imageBase64;
+document.getElementById("imagePreview").classList.remove("hidden");
+};
+if(file)reader.readAsDataURL(file);
+}
+
+function submitIssue(){
+    let desc=document.getElementById("description").value;
+    if(desc===""){alert("Describe issue");return;}
+
+    let category=detectCategory(desc);
+    alert("🤖 AI detected category: "+category);
+
+    let id=Math.random().toString(36).substring(2,8).toUpperCase();
+
+    let issue={
+        id:id,
+        student:currentStudent,
+        description:desc,
+        category:category,
+        status:"Pending",
+        message:"",
+        image:imageBase64
+    };
+
+    let issues=JSON.parse(localStorage.getItem("issues"))||[];
+    issues.push(issue);
+    localStorage.setItem("issues",JSON.stringify(issues));
+
+    document.getElementById("description").value="";
+    document.getElementById("imagePreview").classList.add("hidden");
+    imageBase64="";
+
+    loadStudentTickets();
+}
+
+
+function loadStudentTickets(){
+    let issues=JSON.parse(localStorage.getItem("issues"))||[];
+    let table=document.getElementById("studentTickets");
+    table.innerHTML="";
+
+    issues.forEach(issue=>{
+        if(issue.student===currentStudent){
+
+            table.innerHTML+=`
+            <tr>
+                <td>${issue.id}</td>
+                <td>${issue.category}</td>
+                <td>
+                    ${issue.status}
+                    <div class="progress mt-1">
+                        <div class="progress-bar" 
+                        style="width:${issue.status=="Pending"?"30":issue.status=="In Progress"?"65":"100"}%"></div>
+                    </div>
+                </td>
+                <td>
+                    ${issue.image ? `<img src="${issue.image}" width="60">` : "-"}
+                </td>
+                <td>
+                    ${issue.message ? issue.message : "<span class='text-muted'>No updates</span>"}
+                </td>
+            </tr>
+            `;
+        }
+    });
+}
+
+
+function loadAdminTable(){
+let issues=JSON.parse(localStorage.getItem("issues"))||[];
+let table=document.getElementById("adminTable");
+table.innerHTML="";
+
+issues.forEach((issue,index)=>{
+table.innerHTML+=`<tr>
+<td>${issue.id}</td>
+<td>${issue.student}</td>
+<td>${issue.description}</td>
+<td>${issue.category}</td>
+
+<td>
+${issue.status}
+<div class="progress mt-1">
+<div class="progress-bar" style="width:${issue.status=="Pending"?"30":issue.status=="In Progress"?"65":"100"}%"></div>
+</div>
+</td>
+
+<td>
+<textarea class="form-control mb-2 bg-dark text-white border-0"
+placeholder="Type update for student..."
+onchange="saveMessage(${index},this.value)">${issue.message||""}</textarea>
+
+<select onchange="updateStatus(${index},this.value)" class="form-select">
+<option ${issue.status=="Pending"?"selected":""}>Pending</option>
+<option ${issue.status=="In Progress"?"selected":""}>In Progress</option>
+<option ${issue.status=="Resolved"?"selected":""}>Resolved</option>
+</select>
+</td>
+
+</tr>`;
+});
+
+calculateAnalytics();
+calculateGamification();
+}
+
+function updateStatus(index,value){
+let issues=JSON.parse(localStorage.getItem("issues"));
+issues[index].status=value;
+localStorage.setItem("issues",JSON.stringify(issues));
+loadAdminTable();
+}
+
+function calculateAnalytics(){
+let issues=JSON.parse(localStorage.getItem("issues"))||[];
+let resolved=issues.filter(i=>i.status=="Resolved").length;
+let percent=issues.length?Math.round((resolved/issues.length)*100):0;
+document.getElementById("issuesToday").innerText=issues.length;
+document.getElementById("resolvedPercent").innerText=percent+"%";
+}
+
+function calculateGamification(){
+let issues=JSON.parse(localStorage.getItem("issues"))||[];
+let counts={};
+issues.forEach(issue=>{
+counts[issue.student]=(counts[issue.student]||0)+1;
+});
+let top="-";
+let max=0;
+for(let student in counts){
+if(counts[student]>max){
+max=counts[student];
+top=student;
+}}
+document.getElementById("topReporter").innerText=top;
+}
+function checkTicketStatus() {
+    let ticketId = document.getElementById("searchTicketId").value.trim().toUpperCase();
+    let issues = JSON.parse(localStorage.getItem("issues")) || [];
+    let resultDiv = document.getElementById("ticketSearchResult");
+
+    let found = issues.find(issue => issue.id === ticketId);
+
+    if (found) {
+        resultDiv.innerHTML = `
+            <div class="card p-3" style="background:#1e293b; color:white;">
+                <h6>Ticket ID: ${found.id}</h6>
+                <p><strong>Category:</strong> ${found.category}</p>
+                <p><strong>Status:</strong> ${found.status}</p>
+                <p><strong>Admin Update:</strong> 
+                    ${found.message ? found.message : "No updates yet"}
+                </p>
+            </div>
+        `;
+    } else {
+        resultDiv.innerHTML = `
+            <div class="alert alert-danger">
+                Ticket ID not found!
+            </div>
+        `;
+    }
+}
+</script>
+
+</body>
+</html>
